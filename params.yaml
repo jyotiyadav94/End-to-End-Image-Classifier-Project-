@@ -1,0 +1,40 @@
+base:
+  project: image classifier
+  random_state: 
+  target_col: 
+  categorical_cols: 
+
+data_source:
+  source: data_given/
+
+load_data:
+  raw_dataset_csv: 
+
+transformed_data:
+  final_dataframe: 
+
+model_parameters:
+  model_name: mobilenetv3_small_100
+  config_name: config
+  max_length: 
+  batch_size: 
+  epochs: 
+  learning_rate: 
+  test_size: 
+  shuffle: 
+
+model_dir: saved_models
+pred_dir:  prediction_service/model/
+
+reports:
+  scores: 
+  files: reports/imagenet_classes.txt
+  plots: reports/figures/
+
+webapp_model_dir: prediction_service/model/model.pth
+num_labels: 
+
+mlflow_config:
+  artifacts_dir: artifacts
+  experiment_name: mlops
+  remote_server_uri: http://localhost:5000

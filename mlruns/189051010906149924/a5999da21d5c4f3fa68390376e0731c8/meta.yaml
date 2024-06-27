@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/189051010906149924/a5999da21d5c4f3fa68390376e0731c8/artifacts
+end_time: 1719430219489
+entry_point_name: ''
+experiment_id: '189051010906149924'
+lifecycle_stage: active
+run_id: a5999da21d5c4f3fa68390376e0731c8
+run_name: bright-trout-461
+run_uuid: a5999da21d5c4f3fa68390376e0731c8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719430218789
+status: 4
+tags: []
+user_id: wenda

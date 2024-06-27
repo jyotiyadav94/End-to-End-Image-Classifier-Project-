@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/181041994711703762/fc014b754bac481c92a98ae80aa1e8f0/artifacts
+end_time: 1719422370843
+entry_point_name: ''
+experiment_id: '181041994711703762'
+lifecycle_stage: active
+run_id: fc014b754bac481c92a98ae80aa1e8f0
+run_name: learned-dolphin-44
+run_uuid: fc014b754bac481c92a98ae80aa1e8f0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719422365638
+status: 3
+tags: []
+user_id: wenda

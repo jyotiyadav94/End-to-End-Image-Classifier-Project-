@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/189051010906149924/32c75564041343f9986b39c4c6f776d4/artifacts
+end_time: 1719423666711
+entry_point_name: ''
+experiment_id: '189051010906149924'
+lifecycle_stage: active
+run_id: 32c75564041343f9986b39c4c6f776d4
+run_name: able-lynx-918
+run_uuid: 32c75564041343f9986b39c4c6f776d4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719423662383
+status: 3
+tags: []
+user_id: wenda

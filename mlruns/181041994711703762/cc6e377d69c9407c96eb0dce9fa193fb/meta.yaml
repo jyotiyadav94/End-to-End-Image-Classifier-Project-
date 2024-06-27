@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/181041994711703762/cc6e377d69c9407c96eb0dce9fa193fb/artifacts
+end_time: 1719421961944
+entry_point_name: ''
+experiment_id: '181041994711703762'
+lifecycle_stage: active
+run_id: cc6e377d69c9407c96eb0dce9fa193fb
+run_name: defiant-bat-419
+run_uuid: cc6e377d69c9407c96eb0dce9fa193fb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719421957553
+status: 3
+tags: []
+user_id: wenda

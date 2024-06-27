@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/189051010906149924/6010ec0c620c4065bb13db03898c579f/artifacts
+end_time: 1719423556717
+entry_point_name: ''
+experiment_id: '189051010906149924'
+lifecycle_stage: active
+run_id: 6010ec0c620c4065bb13db03898c579f
+run_name: adaptable-hare-357
+run_uuid: 6010ec0c620c4065bb13db03898c579f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719423553302
+status: 3
+tags: []
+user_id: wenda

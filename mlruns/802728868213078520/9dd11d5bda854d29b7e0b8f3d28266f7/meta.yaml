@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/802728868213078520/9dd11d5bda854d29b7e0b8f3d28266f7/artifacts
+end_time: 1719430601069
+entry_point_name: ''
+experiment_id: '802728868213078520'
+lifecycle_stage: active
+run_id: 9dd11d5bda854d29b7e0b8f3d28266f7
+run_name: silent-frog-947
+run_uuid: 9dd11d5bda854d29b7e0b8f3d28266f7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719430601050
+status: 4
+tags: []
+user_id: wenda

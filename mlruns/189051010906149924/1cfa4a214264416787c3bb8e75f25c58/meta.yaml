@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/189051010906149924/1cfa4a214264416787c3bb8e75f25c58/artifacts
+end_time: 1719423334946
+entry_point_name: ''
+experiment_id: '189051010906149924'
+lifecycle_stage: active
+run_id: 1cfa4a214264416787c3bb8e75f25c58
+run_name: capable-grouse-891
+run_uuid: 1cfa4a214264416787c3bb8e75f25c58
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719423329071
+status: 3
+tags: []
+user_id: wenda

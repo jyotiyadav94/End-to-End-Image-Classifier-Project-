@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/802728868213078520/78c72a1bc8c44a57920a08aee34e327d/artifacts
+end_time: 1719430637792
+entry_point_name: ''
+experiment_id: '802728868213078520'
+lifecycle_stage: active
+run_id: 78c72a1bc8c44a57920a08aee34e327d
+run_name: rumbling-swan-11
+run_uuid: 78c72a1bc8c44a57920a08aee34e327d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719430633885
+status: 3
+tags: []
+user_id: wenda

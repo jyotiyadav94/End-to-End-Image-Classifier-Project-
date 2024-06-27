@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/189051010906149924/d1041fc3af914076b6f8965f64cca410/artifacts
+end_time: 1719423317784
+entry_point_name: ''
+experiment_id: '189051010906149924'
+lifecycle_stage: active
+run_id: d1041fc3af914076b6f8965f64cca410
+run_name: casual-pig-850
+run_uuid: d1041fc3af914076b6f8965f64cca410
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719423313182
+status: 3
+tags: []
+user_id: wenda

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/189051010906149924/1bdcaa6e348c4ae998aaa0ee552321b7/artifacts
+end_time: 1719423731012
+entry_point_name: ''
+experiment_id: '189051010906149924'
+lifecycle_stage: active
+run_id: 1bdcaa6e348c4ae998aaa0ee552321b7
+run_name: vaunted-newt-319
+run_uuid: 1bdcaa6e348c4ae998aaa0ee552321b7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719423726519
+status: 3
+tags: []
+user_id: wenda

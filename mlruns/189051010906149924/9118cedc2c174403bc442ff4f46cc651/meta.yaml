@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/189051010906149924/9118cedc2c174403bc442ff4f46cc651/artifacts
+end_time: 1719423466399
+entry_point_name: ''
+experiment_id: '189051010906149924'
+lifecycle_stage: active
+run_id: 9118cedc2c174403bc442ff4f46cc651
+run_name: merciful-cow-275
+run_uuid: 9118cedc2c174403bc442ff4f46cc651
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719423459030
+status: 3
+tags: []
+user_id: wenda

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/189051010906149924/d3891db1016b47beb9315e35278bb76f/artifacts
+end_time: 1719423616550
+entry_point_name: ''
+experiment_id: '189051010906149924'
+lifecycle_stage: active
+run_id: d3891db1016b47beb9315e35278bb76f
+run_name: caring-fish-775
+run_uuid: d3891db1016b47beb9315e35278bb76f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719423611581
+status: 3
+tags: []
+user_id: wenda
