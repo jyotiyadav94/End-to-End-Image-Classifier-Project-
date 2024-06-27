@@ -1,11 +1,12 @@
 import yaml
 import os
+import io
 import timm
 import torch
 import json
+from PIL import Image
 from pathlib import Path
 from timm.data.transforms_factory import create_transform
-from PIL import Image
 
 params_path = "params.yaml"
 
@@ -33,12 +34,8 @@ def load_model(params_path):
 
     return model, model_config
 
-model, model_config = load_model(params_path)
-
 def preprocess_image(image):
-    config = read_params(params_path)
-    transform_config = config["transform"]
-    transform = create_transform(**transform_config)
+    transform = create_transform(**model_config)
     tensor = transform(image).unsqueeze(0)
     return tensor
 
@@ -48,40 +45,24 @@ def get_predictions(tensor):
     probabilities = torch.nn.functional.softmax(out[0], dim=0)
     return probabilities
 
-def get_top_predictions(probabilities, top_k=5):
+def get_top_prediction(probabilities):
     config = read_params(params_path)
     labels_path = Path(config["reports"]["files"])
     with open(labels_path, "r") as f:
         categories = [s.strip() for s in f.readlines()]
-    top_prob, top_catid = torch.topk(probabilities, top_k)
-    results = []
-    for i in range(top_prob.size(0)):
-        results.append({"category": categories[top_catid[i]], "probability": float(top_prob[i])})
+    top_prob, top_catid = torch.topk(probabilities, 1)
+    top_category = categories[top_catid[0]]
     
-    return results
+    return top_category
 
 def form_response(image):
+    global model
     # Preprocess the input data
     tensor = preprocess_image(image)
-    print(tensor)
     # Get the prediction
     probabilities = get_predictions(tensor)
-    print(probabilities)
-    # Get top 5 prediction
-    results = get_top_predictions(probabilities)
-    return results
+    # Get top prediction (category string)
+    result = get_top_prediction(probabilities)
+    return result
 
-def api_response(image):
-    try:
-        # Preprocess the input data
-        tensor = preprocess_image(image)
-        
-        # Get the prediction
-        probabilities = get_predictions(tensor)
-
-        # return the results
-        results = get_top_predictions(probabilities)
-        return results
-
-    except Exception as e:
-        return {"error": str(e)}
+model, model_config = load_model(params_path)
