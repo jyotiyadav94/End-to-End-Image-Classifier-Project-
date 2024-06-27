@@ -1,4 +1,4 @@
-End-to-End-MLOPS-Computer-Vision-Project
+End-to-End-MLOPS-Image-Classifier-Project
 ==============================
 
 Computer Vision Projects
