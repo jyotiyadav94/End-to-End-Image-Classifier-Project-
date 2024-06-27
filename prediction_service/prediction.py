@@ -85,9 +85,3 @@ def api_response(image):
 
     except Exception as e:
         return {"error": str(e)}
-
-# Example usage:
-# Assuming 'image.jpg' is the path to your image file
-# image = Image.open('image.jpg')
-# response = form_response(image)
-# print(response)
