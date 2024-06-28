@@ -3,7 +3,7 @@ End-to-End-MLOPS-Image-Classifier-Project
 
 Computer Vision Projects
 
-Project Organization
+# Project Organization
 ------------
 
     ├── LICENSE
@@ -54,4 +54,56 @@ Project Organization
 
 --------
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+# AWS-CICD-Deployment-with-Github-Actions
+
+1. Login to AWS console.
+2. Create IAM user for deployment
+
+## with specific access
+
+1. **EC2 access**: It is a virtual machine.
+2. **ECR**: Elastic Container Registry to save your Docker image in AWS.
+
+## Description: About the deployment
+
+1. Build Docker image of the source code.
+2. Push your Docker image to ECR.
+3. Launch your EC2.
+4. Pull your image from ECR in EC2.
+5. Launch your Docker image in EC2.
+
+## Policy
+
+1. AmazonEC2ContainerRegistryFullAccess
+2. AmazonEC2FullAccess
+
+3. Create ECR repo to store/save Docker image
+   - Save the URI: `637423621763.dkr.ecr.us-east-1.amazonaws.com/mlproject`
+4. Create EC2 machine (Ubuntu)
+5. Open EC2 and Install Docker in EC2 Machine:
+
+### Optional
+
+```bash
+sudo apt-get update -y
+sudo apt-get upgrade
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker ubuntu
+newgrp docker
+```
+
+6. Configure EC2 as self-hosted runner:
+- Settings > Actions > Runner > New self-hosted runner > Choose OS > Then run commands one by one
+
+7. Setup GitHub secrets:
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_REGION=us-east-1
+AWS_ECR_LOGIN_URI=demo >> 566373416292.dkr.ecr.ap-south-1.amazonaws.com
+ECR_REPOSITORY_NAME=simple-app
+
+8. Configure Git:
+git config --global user.name "jyotiyadav"
+
+
