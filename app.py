@@ -1,6 +1,5 @@
 import os
 from flask import Flask, request, render_template, jsonify
-from werkzeug.utils import secure_filename
 from prediction_service import prediction  # Assuming this module exists
 from PIL import Image
 import io
@@ -19,15 +18,24 @@ def index():
 @app.route('/predict', methods=['POST'])
 def upload():
     if request.method == 'POST':
-        # Get the file from the POST request
+        # Validate if file is in the request
+        if 'file' not in request.files:
+            return jsonify({"error": "No file part"}), 400
+
         file = request.files['file']
         
-        # Open the image file and read its contents
-        image_data = file.read()
-        
-        # Create an Image object from the image data
-        image = Image.open(io.BytesIO(image_data))
-        
+        # Validate if a file is selected
+        if file.filename == '':
+            return jsonify({"error": "No selected file"}), 400
+
+        # Validate if file is an image
+        try:
+            image_data = file.read()
+            image = Image.open(io.BytesIO(image_data))
+            image.verify()  
+        except Exception as e:
+            return jsonify({"error": "Invalid image file"}), 400
+
         # Get predictions using the form_response function
         result = prediction.form_response(image)
         
