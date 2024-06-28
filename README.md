@@ -97,11 +97,12 @@ newgrp docker
 - Settings > Actions > Runner > New self-hosted runner > Choose OS > Then run commands one by one
 
 7. Setup GitHub secrets:
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-AWS_REGION=us-east-1
-AWS_ECR_LOGIN_URI=demo >> 566373416292.dkr.ecr.ap-south-1.amazonaws.com
-ECR_REPOSITORY_NAME=simple-app
+
+- AWS_ACCESS_KEY_ID=
+- AWS_SECRET_ACCESS_KEY=
+- AWS_REGION=us-east-1
+- AWS_ECR_LOGIN_URI=demo >> 566373416292.dkr.ecr.ap-south-1.amazonaws.com
+- ECR_REPOSITORY_NAME=simple-app
 
 8. Configure Git:
 git config --global user.name "jyotiyadav"
