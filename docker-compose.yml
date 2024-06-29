@@ -5,6 +5,6 @@ services:
     container_name: 'image-classifier'
     restart: always
     ports:
-      - 0.0.0.0:8081:8081
+      - 127.0.0.1:8080:8080
     volumes:
       - .:/app

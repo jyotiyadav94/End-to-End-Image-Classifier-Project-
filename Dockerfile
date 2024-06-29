@@ -15,4 +15,4 @@ COPY prediction_service ./prediction_service
 COPY webapp ./webapp
 COPY app.py ./app.py
 
-CMD ["gunicorn", "-b", "0.0.0.0:8081", "--timeout", "60", "app:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:8080", "--timeout", "60", "app:app"]
