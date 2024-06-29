@@ -40,7 +40,7 @@ def train_and_evaluate(config_path,logger):
     save_dir = Path(config["model_dir"])
     model_name = config["model_parameters"]["model_name"]
     config_name = config["model_parameters"]["config_name"]
-    remote_server_uri = config["mlflow_config"]["remote_server_uri"]
+    remote_server_uri = config["mlflow_config"]["dags_remote_server_uri"]
     experiment_name = config["mlflow_config"]["experiment_name"]
     model_path = save_dir / f"{model_name}.pth"
     config_path = save_dir / f"{config_name}.json"
