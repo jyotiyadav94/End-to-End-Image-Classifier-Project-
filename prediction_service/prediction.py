@@ -8,7 +8,6 @@ from PIL import Image
 from pathlib import Path
 from timm.data.transforms_factory import create_transform
 
-
 params_path = "params.yaml"
 
 class InvalidImage(Exception):
