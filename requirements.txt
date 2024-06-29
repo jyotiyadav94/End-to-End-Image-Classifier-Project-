@@ -3,7 +3,6 @@ gunicorn
 Flask
 tabulate
 networkx
-numpy
 anyio==4.4.0
 blinker==1.8.2
 certifi==2024.6.2
