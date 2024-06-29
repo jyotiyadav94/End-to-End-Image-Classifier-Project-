@@ -453,8 +453,6 @@ Start the Docker containers & This will launch the application.
 ```bash
 docker-compose up
 ```
-
-![alt text](reports/images/image.png)
 ![alt text](reports/images/image2.png)
 ![alt text](reports/images/image3.png)
 
@@ -528,7 +526,14 @@ git config --global user.name " "
 
 
 CI/CD set up gitup Actions
+
+Ec2 instance 
+![alt text](reports/images/image.png)
+
 ![alt text](reports/images/image5.png)
+
+Push Image through Continous Deployment
+![alt text](reports/images/image.png)
 
 ![alt text](reports/images/image6.png)
 
