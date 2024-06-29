@@ -1,29 +1,31 @@
-import yaml
-import os
-import io
+import json
+from pathlib import Path
 import timm
 import torch
-import json
+import yaml
 from PIL import Image
-from pathlib import Path
 from timm.data.transforms_factory import create_transform
 
 params_path = "params.yaml"
+
 
 class InvalidImage(Exception):
     def __init__(self, message="Invalid image format or content"):
         self.message = message
         super().__init__(self.message)
 
+
 class PredictionError(Exception):
     def __init__(self, message="Error occurred during prediction"):
         self.message = message
         super().__init__(self.message)
 
+
 def read_params(config_path):
     """Read parameters from the specified YAML config file."""
     with open(config_path) as yaml_file:
         return yaml.safe_load(yaml_file)
+
 
 def load_model(params_path):
     config = read_params(params_path)
@@ -36,12 +38,13 @@ def load_model(params_path):
     model = timm.create_model(model_name, pretrained=False)
     model.load_state_dict(torch.load(model_path))
     model.eval()
-    
+
     # Load config
-    with open(config_path, 'r') as f:
+    with open(config_path, "r") as f:
         model_config = json.load(f)
 
     return model, model_config
+
 
 def preprocess_image(image):
     # Ensure the image is of PIL.Image.Image type
@@ -53,6 +56,7 @@ def preprocess_image(image):
     tensor = transform(image).unsqueeze(0)
     return tensor
 
+
 def get_predictions(tensor):
     try:
         with torch.no_grad():
@@ -61,6 +65,7 @@ def get_predictions(tensor):
         return probabilities
     except Exception as e:
         raise PredictionError(str(e))
+
 
 def get_top_prediction(probabilities):
     try:
@@ -73,6 +78,7 @@ def get_top_prediction(probabilities):
         return top_category
     except Exception as e:
         raise PredictionError(str(e))
+
 
 def form_response(image):
     try:

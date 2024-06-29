@@ -1,21 +1,29 @@
-import os 
-import sys
-import json
-import torch
 import argparse
+import json
+import logging
+import os
+import sys
 import warnings
-import logging 
-import pandas as pd
-from torch import nn
-from get_data import read_params, print_tabulated_data,setup_logging
 from pathlib import Path
 
-sys.path.append(str(Path(__file__).parent / 'src'))
+import pandas as pd
+import torch
+from torch import nn
+
+from get_data import print_tabulated_data, read_params, setup_logging
+
+sys.path.append(str(Path(__file__).parent / "src"))
 warnings.filterwarnings("ignore")
 
+
 def analyse_data(config_path):
-    """Analyse Data."""
+    """_summary_
+
+    Args:
+        config_path (_type_): _description_
+    """
     # Add your data Analyse & Visualize logic here
+
 
 if __name__ == "__main__":
     args = argparse.ArgumentParser()

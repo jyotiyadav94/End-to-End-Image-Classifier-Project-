@@ -545,35 +545,3 @@ Push Image through Continous Deployment
 Extension : Python DocString Generator 
 
 # Documentation
-Library: mkdocs
-
-```bash
-mkdocs serve
-```
-```bash
-http://127.0.0.1:8000/
-```
-
-# Styling 
-
-## Black Styling your codes
-Library: Black
-```bash
-black .
-```
-## Library isort for imports
-Library: isort
-```bash
-isort .
-```
-## Styling Reinforcemnet code quality
-Library: Flake8
-```bash
-isort .
-```
-
-## Pre-commit install
-Library: Pre-commit install 
-```bash
-isort .
-```

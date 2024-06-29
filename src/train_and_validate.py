@@ -1,16 +1,19 @@
+import argparse
+import json
 import os
 import sys
-import torch
-import json
-import timm
-import argparse
 import warnings
 from pathlib import Path
 
+import timm
+import torch
+
 # Add src directory to Python path
-sys.path.append(str(Path(__file__).parent / 'src'))
+sys.path.append(str(Path(__file__).parent / "src"))
 from get_data import read_params, setup_logging
+
 warnings.filterwarnings("ignore")
+
 
 def save_model(model, model_path):
     """Save the model to the specified path."""
@@ -22,9 +25,10 @@ def save_model(model, model_path):
 def save_config(model, config_path):
     """Save the model configuration to the specified path."""
     config = timm.data.resolve_data_config({}, model=model)
-    with open(config_path, 'w') as f:
+    with open(config_path, "w") as f:
         json.dump(config, f)
     print(f"Model configuration saved to {config_path}")
+
 
 def load_saved_model(model_name, model_path):
     """Load the model from the specified path."""
@@ -33,7 +37,8 @@ def load_saved_model(model_name, model_path):
     model.eval()
     return model
 
-def train_and_evaluate(config_path,logger):
+
+def train_and_evaluate(config_path, logger):
     """Train and evaluate models."""
     config = read_params(config_path)
     save_dir = Path(config["model_dir"])
@@ -56,11 +61,12 @@ def train_and_evaluate(config_path,logger):
     save_config(model, config_path)
 
     print("Model loaded and saved successfully.")
-    
+
 
 def main(config_path):
     logger = setup_logging()
     train_and_evaluate(config_path, logger)
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

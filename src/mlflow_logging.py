@@ -1,18 +1,20 @@
+import argparse
+import json
 import os
 import sys
-import torch
-import timm
-import json
-import argparse
 import warnings
-import mlflow
-import mlflow.pytorch
 from pathlib import Path
 
-sys.path.append(os.path.abspath('src'))
+import mlflow
+import mlflow.pytorch
+import timm
+import torch
+
+sys.path.append(os.path.abspath("src"))
 from get_data import read_params, setup_logging
 
 warnings.filterwarnings("ignore")
+
 
 def save_model(model, model_path):
     """Save the model to the specified path."""
@@ -20,12 +22,14 @@ def save_model(model, model_path):
     torch.save(model.state_dict(), model_path)
     print(f"Model saved to {model_path}")
 
+
 def save_config(model, config_path):
     """Save the model configuration to the specified path."""
     config = timm.data.resolve_data_config({}, model=model)
-    with open(config_path, 'w') as f:
+    with open(config_path, "w") as f:
         json.dump(config, f)
     print(f"Model configuration saved to {config_path}")
+
 
 def load_saved_model(model_name, model_path):
     """Load the model from the specified path."""
@@ -34,7 +38,8 @@ def load_saved_model(model_name, model_path):
     model.eval()
     return model
 
-def train_and_evaluate(config_path,logger):
+
+def train_and_evaluate(config_path, logger):
     """Train and evaluate models."""
     config = read_params(config_path)
     save_dir = Path(config["model_dir"])
@@ -51,7 +56,7 @@ def train_and_evaluate(config_path,logger):
     with mlflow.start_run():
         # Log parameters
         mlflow.log_param("model_name", model_name)
-        
+
         # Create a new model instance (pretrained=True for initialization)
         model = timm.create_model(model_name, pretrained=True)
         model.eval()
@@ -74,12 +79,14 @@ def train_and_evaluate(config_path,logger):
         print("Model saved and loaded successfully.")
 
         # training and evaluation code
-        
+
         # Log metrics
+
 
 def main(config_path):
     logger = setup_logging()
     train_and_evaluate(config_path, logger)
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
