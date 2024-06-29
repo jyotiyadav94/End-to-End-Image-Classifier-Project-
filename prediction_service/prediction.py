@@ -10,6 +10,7 @@ from timm.data.transforms_factory import create_transform
 
 params_path = "params.yaml"
 
+
 class InvalidImage(Exception):
     def __init__(self, message="Invalid image format or content"):
         self.message = message
