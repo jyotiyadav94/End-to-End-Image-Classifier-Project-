@@ -533,7 +533,7 @@ Ec2 instance
 ![alt text](reports/images/image5.png)
 
 Push Image through Continous Deployment
-![alt text](reports/images/image.png)
+![alt text](reports/images/image9.png)
 
 ![alt text](reports/images/image6.png)
 
