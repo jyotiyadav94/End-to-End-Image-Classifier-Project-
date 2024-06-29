@@ -92,5 +92,6 @@ def form_response(image):
     except Exception as e:
         return {"error": "Unexpected error occurred"}
 
+
 # Load the model and model configuration
 model, model_config = load_model(params_path)
