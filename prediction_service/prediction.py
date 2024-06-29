@@ -32,7 +32,6 @@ def load_model(params_path):
     config_name = config["model_parameters"]["config_name"]
     model_path = save_dir / f"{model_name}.pth"
     config_path = save_dir / f"{config_name}.json"
-
     # Load model
     model = timm.create_model(model_name, pretrained=False)
     model.load_state_dict(torch.load(model_path))
