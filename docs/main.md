@@ -599,4 +599,8 @@ isort .
 **Library:** pre-commit
 ```bash
 Pre-commit install 
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> ad2fa65 (update readme file)
