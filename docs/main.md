@@ -467,7 +467,7 @@ Track the experiments in Dagshub.
 https://dagshub.com/jyotiyadav79811/End-to-End-Image-Classifier-Project-.mlflow/#/experiments/0?searchFilter=&orderByKey=attributes.start_time&orderByAsc=false&startTime=ALL&lifecycleFilter=Active&modelVersionFilter=All+Runs&datasetsFilter=W10%3D
 ```
 
-# Cloud API  & CI/CD 
+# Cloud API  & CI/CD with AWS Cloud
 
 ## AWS-CICD-Deployment-with-Github-Actions
 
@@ -533,15 +533,70 @@ Ec2 instance
 Push Image through Continous Deployment
 ![alt text](reports/images/image9.png)
 
-![alt text](reports/images/image6.png)
-
 ![alt text](reports/images/image7.png)
 
 ![alt text](reports/images/image8.png)
 
 
+# Azure Cloud API  & CI/CD with AWS Cloud
+
+create a container registery
+
+### Run from terminal:
+```sh
+docker build -t mlproj3.azurecr.io/mltest:latest .
+
+docker login mlproj3.azurecr.io
+
+docker push mlproj3.azurecr.io/mltest:latest
+```
+Deployment Steps:
+
+Build the Docker image of the Source Code
+Push the Docker image to Container Registry
+Launch the Web App Server in Azure
+Pull the Docker image from the container registry to Web App server and run
+
+![alt text](reports/images/image10.png)
+
+![alt text](reports/images/image12.png)
+
 
 # DocStrings 
-Extension : Python DocString Generator 
+**Extension:** Python DocString Generator
 
 # Documentation
+**Library:** mkdocs
+
+```bash
+mkdocs serve
+```
+```bash
+http://127.0.0.1:8000/
+```
+
+# Styling 
+
+## Black - Styling your code
+**Library:** Black
+```bash
+black .
+```
+
+## isort - Organizing imports
+**Library:** isort
+```bash
+isort .
+```
+
+## Flake8 - Enforcing code quality
+**Library:** Flake8
+```bash
+isort .
+```
+
+## Pre-commit install
+**Library:** pre-commit
+```bash
+Pre-commit install 
+```
