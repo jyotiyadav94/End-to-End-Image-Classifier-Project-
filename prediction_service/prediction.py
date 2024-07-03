@@ -4,10 +4,11 @@ import timm
 import torch
 import yaml
 from PIL import Image
+from marshmallow import ValidationError
+from marshmallow import Schema, fields
 from timm.data.transforms_factory import create_transform
 
 params_path = "params.yaml"
-
 
 class InvalidImage(Exception):
     def __init__(self, message="Invalid image format or content"):
@@ -46,7 +47,7 @@ def load_model(params_path):
     return model, model_config
 
 
-def preprocess_image(image):
+def preprocess_image(image, model_config):
     # Ensure the image is of PIL.Image.Image type
     if not isinstance(image, Image.Image):
         raise InvalidImage
@@ -57,7 +58,7 @@ def preprocess_image(image):
     return tensor
 
 
-def get_predictions(tensor):
+def get_predictions(tensor, model):
     try:
         with torch.no_grad():
             out = model(tensor)
@@ -73,20 +74,19 @@ def get_top_prediction(probabilities):
         labels_path = Path(config["reports"]["files"])
         with open(labels_path, "r") as f:
             categories = [s.strip() for s in f.readlines()]
-        top_prob, top_catid = torch.topk(probabilities, 1)
-        top_category = categories[top_catid[0]]
+        top_prob, top_id = torch.topk(probabilities, 1)
+        top_category = categories[top_id[0]]
         return top_category
     except Exception as e:
         raise PredictionError(str(e))
 
 
-def form_response(image):
+def response(image, model, model_config):
     try:
-        global model
         # Preprocess the input image
-        tensor = preprocess_image(image)
+        tensor = preprocess_image(image, model_config)
         # Get the predictions
-        probabilities = get_predictions(tensor)
+        probabilities = get_predictions(tensor, model)
         # Get top prediction (category string)
         result = get_top_prediction(probabilities)
         return result
@@ -96,7 +96,3 @@ def form_response(image):
         return {"error": str(e)}
     except Exception as e:
         return {"error": "Unexpected error occurred"}
-
-
-# Load the model and model configuration
-model, model_config = load_model(params_path)
